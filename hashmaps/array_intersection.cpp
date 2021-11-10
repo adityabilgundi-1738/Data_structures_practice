@@ -29,7 +29,7 @@ vector<int> intersection(int* a,int asize, int* b,int bsize){
     }
 
     for (int i = 0; i < map1.size(); i++){
-        
+        return;
     }
     
 
