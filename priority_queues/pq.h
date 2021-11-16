@@ -30,8 +30,20 @@ class priorityqueue{
     }
 
     void insert(int num){
-        *pq.end() = num;
-        
+        pq.push_back(num);
+        int childindex = pq.size() -1;
+
+        while(childindex > 0){
+            int parentIndex = (childindex -1)/2;
+
+            if(pq[childindex] < pq[parentIndex]){
+                int temp;
+                temp = pq[childindex];
+                pq[childindex] = pq[parentIndex];
+                pq[parentIndex] = temp;
+                childindex = parentIndex;
+            }
+        }
     }
 
 
