@@ -43,10 +43,40 @@ class priorityqueue{
                 pq[parentIndex] = temp;
                 childindex = parentIndex;
             }
+            else{
+                break;
+            }
         }
     }
 
+    void removeMin(){
+        int ans = pq[0];
+        pq[0] = pq[pq.size() - 1];
+        pq.pop_back();
 
+        int lci,rci,pi;
+        pi = 0;
+        while(){
+            lci = 2*pi + 1;
+            rci = 2*pi + 2;
+            if(rci >= pq.size()){
+                int minIndex = min(lci,pi);
+            }
+            else if( lci >= pq.size()){
+                int minIndex = min(rci,pi);
+            }
+            
+            int minIndex = min(lci,min(rci,pi));
+            if(minIndex == pi){
+                break;
+            }
+            else{
+                int temp = pq[minIndex];
+                pq[minIndex] = pq[pi];
+                pq[pi] = temp;
+                pi = minIndex;
+            } 
+        }
 
-
+    }
 };
