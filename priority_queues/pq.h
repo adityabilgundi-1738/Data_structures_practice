@@ -56,17 +56,23 @@ class priorityqueue{
 
         int lci,rci,pi;
         pi = 0;
-        while(){
+        while(true){
             lci = 2*pi + 1;
             rci = 2*pi + 2;
-            if(rci >= pq.size()){
-                int minIndex = min(lci,pi);
-            }
-            else if( lci >= pq.size()){
-                int minIndex = min(rci,pi);
-            }
+            int minIndex;
             
-            int minIndex = min(lci,min(rci,pi));
+            if(lci >= pq.size() && rci >= pq.size()){
+                break;
+            }
+            else if(rci >= pq.size()){
+                minIndex = min(lci,pi);
+            }
+            else if(lci >= pq.size() ){
+                minIndex = min(rci,pi);
+            }
+            else{
+                minIndex = min(lci,min(rci,pi));
+            }
             if(minIndex == pi){
                 break;
             }
@@ -77,6 +83,5 @@ class priorityqueue{
                 pi = minIndex;
             } 
         }
-
     }
 };
