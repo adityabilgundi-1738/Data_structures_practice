@@ -81,7 +81,7 @@ node* deletenode(node* head, int i){
         return head;
     }
 
-    while((temp !=NULL) && (count < i-1)){
+    while((temp != NULL) && (count < i-1)){
         temp = temp->next;
         count++;
     }

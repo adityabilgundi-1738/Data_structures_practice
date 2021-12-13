@@ -84,7 +84,6 @@ node* insertnoderec(node* head,int i, int num){
     return head;
 }
 
-
 int main(){
     node* head = takeinput();
 

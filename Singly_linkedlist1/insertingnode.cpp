@@ -65,9 +65,8 @@ node* insertnode(node* head, int i, int num){
     }
     else if(temp == NULL){
         cout<<endl;
-        cout<<"Segmentation Fault"<<endl;
-        cout<<"jk, index value is more than the max index of the LL"<<endl;
-
+        // cout<<"Segmentation Fault"<<endl;
+        cout<<"index value is more than the max index of the LL"<<endl;
     }
     return head;
 }
