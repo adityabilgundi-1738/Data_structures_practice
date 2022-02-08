@@ -4,7 +4,6 @@
 using namespace std;
 
 class student{
-    
     int age;
     public:
     char *name;
