@@ -6,9 +6,9 @@ using namespace std;
 
 vector<int> bfsGraph(int V, vector<int> adj[]){
     vector<int> bfs;
-    vector<int> vis(V+1, 0);
+    vector<int> vis(V, 0);
 
-    for (int i = 1; i <= V; i++){
+    for (int i = 1; i < V; i++){
         if (!vis[i]){
             queue<int> q;
             q.push(i);
@@ -31,8 +31,7 @@ vector<int> bfsGraph(int V, vector<int> adj[]){
     return bfs;
 }
 
-int main()
-{
+int main(){
     int n, m;
     cin >> n >> m;
     vector<int> adj[n+1];
@@ -47,10 +46,10 @@ int main()
         adj[v].push_back(u);
     }
 
-    vector<int> ans = bfsGraph(n-1,adj);
+    vector<int> ans = bfsGraph(n,adj);
 
     for (auto& it : ans){
-        cout<<ans[it];
+        cout<<ans[it]<<", ";
     }
     
 
