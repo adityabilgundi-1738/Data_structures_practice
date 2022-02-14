@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         ".c": "c",
         "iostream": "cpp",
         "limits": "cpp",
@@ -41,6 +42,9 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp"
     }
 }
