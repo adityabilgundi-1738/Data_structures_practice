@@ -40,7 +40,7 @@ bool cycleBfsChecker(int i, vector<vector<int>> &adj, int n, vector<int> &vis){
 }
 
 bool cycleChecker(vector<vector<int>> &adj, int n, vector<int> &vis){
-    for (int i = 1; i < n; i++){
+    for (int i = 1; i <= n; i++){
         if(!vis[i]){
             if(cycleBfsChecker(i, adj, n, vis)){
                 return true;
