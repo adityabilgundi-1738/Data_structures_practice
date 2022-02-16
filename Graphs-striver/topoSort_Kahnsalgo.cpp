@@ -5,21 +5,54 @@
 
 using namespace std;
 
-// This only works on DAC i.e -> Directed Acyclic Graph
+vector<int> topo(vector<vector<int>> &adj, vector<int> &indegree, int n){
+    for (int i = 1; i <= n; i++){
+        for(auto it: adj[i]){
+            indegree[it]++;
+        }
+    }
+
+    queue<int> q;
+    for (int j = 1; j <= n; j++){
+        if(indegree[j] == 0){
+            q.push(j);
+        }
+    }
+    vector<int> ans;
+
+    while(!q.empty()){
+        int temp = q.front();
+        q.pop();
+        ans.push_back(temp);
+
+        for(auto it: adj[temp]){
+            indegree[it]--;
+            if(!indegree[it]){
+                q.push(it);
+            }
+        }
+    }
+    return ans;
+}
 
 int main(){
     int n,m;
     cin>>n>>m;
 
     vector<vector<int>> adj(n+1, vector<int>());
-    vector<int> vis(n+1, 0);
-
+    vector<int> indegree(n+1, 0);
 
     for (int i = 0; i < m; i++){
         int u,v;
         cin>>u>>v;
         adj[u].push_back(v);
-    }    
+    }
+
+    vector<int> ans = topo(adj,indegree,n);
+
+    for(int i = 0; i < ans.size(); i++){
+        cout<<ans[i]<<" ";
+    }
 
     return 0;
 }
