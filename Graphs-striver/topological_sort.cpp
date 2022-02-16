@@ -47,7 +47,7 @@ int main(){
     int nasd = topo.size();
 
     for (int i = 0; i < nasd; i++){
-        cout <<topo.top()<<endl;
+        cout<<topo.top()<<endl;
         topo.pop();
     }
     
