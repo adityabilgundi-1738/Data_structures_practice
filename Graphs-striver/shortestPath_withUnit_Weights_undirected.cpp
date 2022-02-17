@@ -32,10 +32,7 @@ vector<int> minDist(vector<vector<int>> &adj, int n,int src){
 int main(){
     int n,m;
     cin>>n>>m;
-
     vector<vector<int>> adj(n+1, vector<int>());
-    
-
     cout<<"Enter Edges"<<endl;
 
     for (int i = 0; i < m; i++){
@@ -54,9 +51,7 @@ int main(){
     cin>>dest;
 
     vector<int> dist = minDist(adj,n,source);
-
     cout<<"Minimum distance from "<<source<<" to "<<dest<<" is = "<<dist[dest]<<endl;
-
     return 0;
 }
 
