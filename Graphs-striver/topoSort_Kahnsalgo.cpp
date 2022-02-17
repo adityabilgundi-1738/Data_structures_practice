@@ -59,6 +59,13 @@ int main(){
 
 // 6 6 1 2 2 3 3 4 4 5 6 5 6 1
 // 5 5 1 2 2 3 3 4 4 5 5 1
-
 // 11 10 1 2 2 4 3 5 3 11 5 6 6 7 7 8 8 9 9 10 10 5 -> cyclic directed
-// 11 10 1 2 2 4 3 5 5 6 6 7 5 8 8 9 9 10 10 7 10 11 -> cyclic non - directed
+
+// Okay so to clarify the (cnt == N) logic.
+
+// In Kahn's algorithm, a node only enters the queue if its indegree becomes zero and then it further decrements the indegree values of its adjacent nodes right. 
+// But in the case of cyclic graph , there will be a node from where the cycle will be starting and then coming to an end. 
+// So in order for the elements present in the cycle to get pushed into the queue, that cycle starting node's indegree must become zero right. 
+// But but but, that node's indegree will never become zero as one of the node from the cycle (the second last element) will be pointing towards the starting node. 
+// Just imagine with a diagram in the video. So if that node's indegree will never become zero , 
+// then it will restrict its adjacent nodes(at least) to get evaluated and hence the total number of nodes getting pushed into the queue (cnt) will never become (=N).

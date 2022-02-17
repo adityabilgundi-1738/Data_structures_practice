@@ -46,6 +46,7 @@
         "forward_list": "cpp",
         "list": "cpp",
         "unordered_set": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "iterator": "cpp"
     }
 }
