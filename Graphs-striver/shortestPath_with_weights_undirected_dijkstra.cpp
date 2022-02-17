@@ -46,13 +46,14 @@ int main(){
     cout<<"Enter Source:"<<endl;
     cin>>source;
 
+    dijkstra(adj,dist,source);
+    
     // int dest;
     // cout<<"Enter Destination:"<<endl;
     // cin>>dest;
-
-    dijkstra(adj,dist,source);
-
     // cout<<"Minimum distance from "<<source<<" to "<<dest<<" is = "<<dist[dest]<<endl;
+
+    cout<<"Printing all distances"<<endl;
     for (int i = 1; i < dist.size(); i++){
         cout<<dist[i]<<" ";
     }
