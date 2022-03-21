@@ -120,3 +120,14 @@ int main(){
     //5 2 10 0 1 -1 15 -1 -1 -1 -1 -1 -1 not a  bst
     return 0;
 }
+    bool isValidBST(TreeNode* root) {
+        if(root == NULL){
+        return true;
+    }
+
+    if(root->val < maximum(root->left) || root->val >= minimum(root->right)){
+        return false;
+    }
+    else{isValidBST(root->right) && isValidBST(root->left);
+    }
+    }
