@@ -75,8 +75,7 @@ bool check_pali(node* head){
     node* h1 = head;
     node* h2 = midpoint(head);
     h2 = reverse(h2);
-
-    //comparing
+    
     bool ans;
     while(h1 != NULL || h2 != NULL){
         if(h1->num == h2->num){
