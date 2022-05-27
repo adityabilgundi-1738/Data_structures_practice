@@ -1,0 +1,6 @@
+For problems where duplicacy is not allowed we use a 2D storage
+bot for the same with allowed duplicacy we use a 1D storage
+
+Eg: 
+1. Coin change problem where duplicacy allowed - 1D array
+2. Coin change problem where duplicacy not allowed - 2D array
