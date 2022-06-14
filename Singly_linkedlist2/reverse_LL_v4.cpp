@@ -43,20 +43,20 @@ void printer(node* head){
     }
 }
 
-// node* reversal(node* head){
-//     node* prev = NULL;
-//     node* curr = head;
-//     node* foll = head->next;
+node* reversal(node* head){
+    node* prev = NULL;
+    node* curr = head;
+    node* foll = head->next;
 
-//     while(curr != NULL){
-//         curr->next = prev;
-//         prev = curr;
-//         curr = foll;
-//         if(foll != NULL)
-//             foll = foll->next;
-//     }
-//     return prev;
-// }
+    while(curr != NULL){
+        curr->next = prev;
+        prev = curr;
+        curr = foll;
+        if(foll != NULL)
+            foll = foll->next;
+    }
+    return prev;
+}
 
 
 int main(){

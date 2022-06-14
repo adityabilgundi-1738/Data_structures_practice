@@ -66,7 +66,6 @@ bool check_paran(string str){
         }
     }
     return ans;
-    
 }
 
 int main(){
