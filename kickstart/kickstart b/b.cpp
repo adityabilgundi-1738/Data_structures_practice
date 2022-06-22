@@ -1,25 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> getFactors(int num){
-    vector<int> vct;
-    for(int i = 1; i <= num; i++){
+vector<string> getFactors(long long num){
+    vector<string> vct;
+    for(long long i = 1; i <= sqrt(num); i++){
         if(num % i == 0){
-            vct.push_back(i);
+            if(num/i == i){
+                vct.push_back(to_string(i));
+            }
+            else{
+                vct.push_back(to_string(i));
+                vct.push_back(to_string(num/i));
+            }
         }
     }
     return vct;
 }
 
 void helper(){
-    int num;
+    long long num;
     cin>>num;
 
-    int count = 0;
+    long long count = 0;
 
-    vector<int> vct = getFactors(num);
+    vector<string> vct = getFactors(num);
     for(auto it: vct){
-        string temp = to_string(it);
+        string temp = it;
         string rev = temp;
         reverse(rev.begin(), rev.end());
 
