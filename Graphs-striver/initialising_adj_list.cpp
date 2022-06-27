@@ -23,6 +23,7 @@ using namespace std;
 
 int main(){
     int n,m;
+    // n nodes and m edges
     cin>>n>>m;
     vector<int> adj[n+1]; 
     // assuming that this is a 1-based graph index
@@ -32,9 +33,11 @@ int main(){
         cin>>u>>v;
         adj[u].push_back(v);
         adj[v].push_back(u);
+        // push back u to v and v to u if it is an undirected graph else only u to v
     }
     return 0;
 }
+// 6 6 1 2 2 3 3 4 4 5 5 6 6 1
 
 // if the edges have weights, then we create a vector of pairs.
 // we will store the pair as <int, int> where <adj node, weight>
