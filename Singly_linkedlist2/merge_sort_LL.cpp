@@ -43,7 +43,16 @@ void printer(node* head){
     }
 }
 
-node* merger(node* h1, node* h2){
+int length(node* head){
+    int count = 1;
+    while(head->next != NULL){
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+node* merger(node* h1, node* h2){   
     node* fhead = NULL;
     node* ftail = NULL;
 
@@ -79,15 +88,6 @@ node* merger(node* h1, node* h2){
     return fhead;
 }
 
-int length(node* head){
-    int count = 1;
-    while(head->next != NULL){
-        count++;
-        head = head->next;
-    }
-    return count;
-}
-
 node* midpoint(node* head){
     node* slow = head;
     node* fast = head->next;
@@ -103,17 +103,12 @@ node* midpoint(node* head){
 }
 
 node* mergesort(node* head){
-    //base case
     if(head->next == NULL){
         return head;
     }
     
-    //making two parts of the LL
     node* head1 = head;
-    node* mid = midpoint(head1);
-    node* head2 = mid->next;
-    mid->next = NULL;
-    //recursion call
+    node* head2 = midpoint(head1)->next;
     node* finalhead = merger(mergesort(head1),mergesort(head2));  
 
     return finalhead;

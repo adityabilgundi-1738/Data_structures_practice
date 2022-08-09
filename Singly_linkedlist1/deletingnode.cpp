@@ -77,7 +77,7 @@ node* deletenode(node* head, int i){
     int count = 0;
     
     if(i == 0){
-        head = temp ->next;
+        head = head->next;
         return head;
     }
 
@@ -93,7 +93,6 @@ node* deletenode(node* head, int i){
     }
     else if(temp == NULL){
         cout<<endl;
-        cout<<"Segmentation Fault"<<endl;
         cout<<"Index value is more than the max index of the LL"<<endl;
     }
     return head;

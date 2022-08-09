@@ -45,10 +45,7 @@ node* takeinput(){
 }
 
 int main(){
-    
-    node* head  =takeinput();
-    
+    node* head = takeinput();
     printer(head);
-    
     return 0;
 }

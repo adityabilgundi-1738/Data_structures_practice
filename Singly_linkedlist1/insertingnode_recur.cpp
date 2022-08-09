@@ -79,7 +79,7 @@ node* insertnoderec(node* head,int i, int num){
         return head;
     }
     else 
-    head ->next = insertnode(head->next,i-1,num);
+    head->next = insertnode(head->next,i-1,num);
 
     return head;
 }

@@ -52,12 +52,12 @@ node* reversal(node* head){
         curr->next = prev;
         prev = curr;
         curr = foll;
-        if(foll != NULL)
+        if(foll != NULL){
             foll = foll->next;
+        }
     }
     return prev;
 }
-
 
 int main(){
     node* head = takeinput();
