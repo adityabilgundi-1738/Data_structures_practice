@@ -6,18 +6,7 @@ using namespace std;
 
 // Given an undirected graph, how to check if there is a cycle in the graph?
 
-bool dfs(int node, int parent, vector<int> &vis, vector<vector<int>> &adj){
-    // for (int j = 0; j < adj[node].size(); j++){
-    //     if(!vis[adj[node][j]]){
-    //         if(recDfs(adj[node][j], node, vis, adj)){
-    //             return true;
-    //         }
-    //     }
-    //     else if(vis[adj[node][j]] != parent){
-    //         return true;
-    //     }
-    // }
-    
+bool dfs(int node, int parent, vector<int> &vis, vector<vector<int>> &adj){    
     vis[node] = 1;
     for(auto it: adj[node]){
         if(!vis[it]){
@@ -44,10 +33,9 @@ int main(){
     cin>>n>>m;
 
     vector<vector<int>> adj(n+1, vector<int>());
-
     cout<<"Enter Edges"<<endl;
 
-    for (int i = 0; i < m; i++){
+    for(int i = 0; i < m; i++){
         int u,v;
         cin>>u>>v;
         adj[u].push_back(v);

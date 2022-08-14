@@ -14,17 +14,6 @@ bool cycleBfsChecker(int i, vector<vector<int>> &adj, int n, vector<int> &vis){
     while(!q.empty()){
         pair<int,int> temp = q.front();
         q.pop();
-
-        // for (int j = 0; j < adj[temp.first].size(); j++){
-        //     if(!vis[adj[temp.first][j]]){
-        //         q.push({adj[temp.first][j],temp.first});
-        //         vis[adj[temp.first][j]] = 1;
-        //     }
-        //     else{
-        //         if(vis[adj[temp.first][j]] != temp.second)
-        //             return true;
-        //     }
-        // }
         
         for(auto it : adj[temp.first]){
             if(!vis[it]){
